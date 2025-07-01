@@ -39,3 +39,7 @@ test('supports custom delimiter of any length', () => {
 test('supports multiple delimiters', () => {
     expect(add("//[*][%]\n1*2%3")).toBe(6);
 });
+
+test('supports multiple custom delimiters with length > 1', () => {
+    expect(add("//[**][%%]\n1**2%%3")).toBe(6);
+});
