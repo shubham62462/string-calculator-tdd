@@ -3,9 +3,19 @@ function add(numbers) {
     
     let delimiter = ",";
     if (numbers.startsWith("//")) {
-        const match = numbers.match(/^\/\/(.)\n(.*)/);
-        delimiter = match[1];
-        numbers = match[2];
+        // Support for delimiters of any length using square brackets
+        const match = numbers.match(/^\/\/\[([^\]]+)\]\n(.*)/);
+        if (match) {
+            delimiter = match[1];
+            numbers = match[2];
+        } else {
+            // Fallback for single character delimiter (backward compatibility)
+            const singleCharMatch = numbers.match(/^\/\/(.)\n(.*)/);
+            if (singleCharMatch) {
+                delimiter = singleCharMatch[1];
+                numbers = singleCharMatch[2];
+            }
+        }
     }
     numbers = numbers.replace(/\n/g, delimiter);
     const parts = numbers.split(delimiter).map(n => parseInt(n));
