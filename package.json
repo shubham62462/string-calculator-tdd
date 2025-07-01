@@ -1,0 +1,23 @@
+{
+  "name": "string-calculator-tdd",
+  "version": "1.0.0",
+  "description": "Test-Driven Development (TDD) implementation of the String Calculator kata in Node.js using Jest.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shubham62462/string-calculator-tdd.git"
+  },
+  "keywords": [],
+  "author": "Shubham Dey",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shubham62462/string-calculator-tdd/issues"
+  },
+  "homepage": "https://github.com/shubham62462/string-calculator-tdd#readme",
+  "devDependencies": {
+    "jest": "^30.0.3"
+  }
+}
